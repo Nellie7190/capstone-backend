@@ -1,0 +1,1 @@
+web: gunicorn capBackend_django.wsgi

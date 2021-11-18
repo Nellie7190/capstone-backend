@@ -1,0 +1,19 @@
+<!-- <h2>{{ user.name }} <a href="{% url 'review_detail' pk=review.pk %}">(edit)</a></h2>
+
+<img src="{{ user.photo_url }}" alt="" class="user-photo" /> -->
+
+<!-- <h3>Reviews <a href="">(+)</a></h3> -->
+<ul>
+  {% for user in users %}
+  <li>
+    <a href="">{{ user.reviews.all }}</a>
+  </li>
+  {% endfor %}
+</ul>
+<!-- <ul>
+  {% for review in user.reviews.all %}
+  <li>
+    <a href="">{{ review.place }}</a>
+  </li>
+  {% endfor %}
+</ul> -->
