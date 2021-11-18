@@ -27,11 +27,15 @@ class PlaceSerializer(serializers.HyperlinkedModelSerializer):
 
 class ReviewSerializer(serializers.HyperlinkedModelSerializer):
     place = serializers.HyperlinkedRelatedField(
-        view_name='review_detail',
+        view_name='place_detail',
         read_only=True,
     )
+    # user = serializers.HyperlinkedRelatedField(
+    #     view_name='review_detail',
+    #     read_only=True,
+    # )
     user = serializers.HyperlinkedRelatedField(
-        view_name='review_detail',
+        view_name='user_detail',
         read_only=True,
     )
 
@@ -39,7 +43,12 @@ class ReviewSerializer(serializers.HyperlinkedModelSerializer):
         queryset=Place.objects.all(),
         source='place'
     )
+    
+    user_id=serializers.PrimaryKeyRelatedField(
+        queryset=User.objects.all(),
+        source='user'
+    )
 
     class Meta:
         model = Review
-        fields = ('id', 'user', 'place_id', 'place', 'isBlackOwned', 'isWomanOwned', 'isLComOwned', 'isENMOwned', 'allowsPets', 'hoursOpen', 'rating', 'comment')
+        fields = ('id', 'user', 'user_id', 'place', 'place_id', 'isBlackOwned', 'isWomanOwned', 'isLComOwned', 'isENMOwned', 'allowsPets', 'hoursOpen', 'rating', 'comment')
