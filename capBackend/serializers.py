@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from .models import User, Review, Place
-from viewflow.fields import CompositeKey
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     reviews = serializers.HyperlinkedRelatedField(
