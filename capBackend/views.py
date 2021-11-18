@@ -2,7 +2,8 @@
 # from django.shortcuts import render
 from rest_framework import generics
 from .models import User, Review, Place
-from .serializers import PlaceSerializer, ReviewSerializer
+from .serializers import PlaceSerializer, ReviewSerializer, UserSerializer
+from capBackend import serializers
 
 # Create your views here.
 class PlaceList(generics.ListCreateAPIView):
@@ -20,6 +21,14 @@ class ReviewList(generics.ListCreateAPIView):
 class ReviewDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
+
+class UserList(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+class UserDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
 # def user_list(request):
 #     users = User.objects.all()

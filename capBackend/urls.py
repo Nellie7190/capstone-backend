@@ -7,6 +7,6 @@ urlpatterns = [
     path('places/<int:pk>', views.PlaceDetail.as_view(), name='place_detail'),
     path('reviews/', views.ReviewList.as_view(), name='review_list'),
     path('reviews/<int:pk>', views.ReviewDetail.as_view(), name='review_detail'),
-    # path('users/', views.UserList, name='user_list'),
-    # path('users/<int:pk>', views.UserDetail, name='user_detail'),
+    path('users/', views.UserList.as_view(), name='user_list'),
+    path('users/<int:pk>', views.UserDetail.as_view(), name='user_detail'),
 ]
