@@ -1,9 +1,11 @@
 # from django.http.response import JsonResponse
 # from django.shortcuts import render
+# from rest_framework import permissions
+# from capBackend import serializers
 from rest_framework import generics
+from rest_framework.permissions import AllowAny
 from .models import User, Review, Place
 from .serializers import PlaceSerializer, ReviewSerializer, UserSerializer
-from capBackend import serializers
 
 # Create your views here.
 class PlaceList(generics.ListCreateAPIView):
