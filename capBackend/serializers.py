@@ -23,7 +23,7 @@ class PlaceSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Place
-        fields = ('id', 'reviews', 'place_url', 'name', 'address', 'isBlackOwned', 'isWomanOwned', 'isENMOwned', 'isLComOwned', 'allowsPets', 'hoursOpen')
+        fields = ('id', 'name', 'address', 'image', 'place_url', 'isBlackOwned', 'isWomanOwned', 'isENMOwned', 'isLComOwned', 'allowsPets', 'hoursOpen', 'reviews')
 
 class ReviewSerializer(serializers.HyperlinkedModelSerializer):
     place = serializers.HyperlinkedRelatedField(
