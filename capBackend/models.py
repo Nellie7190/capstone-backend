@@ -13,6 +13,7 @@ class User(models.Model):
 class Place(models.Model):
     name = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
+    image = models.CharField(max_length=250, default='no image')
     isBlackOwned = models.BooleanField()
     isWomanOwned = models.BooleanField()
     isENMOwned = models.BooleanField()
@@ -36,7 +37,7 @@ class Review(models.Model):
     # change the field type
     hoursOpen = models.CharField(default='0', max_length=10)
     rating = models.IntegerField(default=0)
-    comment = models.TextField(max_length=200, default='no reviews')
+    comment = models.TextField(max_length=500, default='no reviews')
 
     def __str__(self):
         return self.comment
