@@ -13,6 +13,7 @@ class User(models.Model):
 class Place(models.Model):
     name = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
+    description = models.CharField(max_length=500, default='no description')
     image = models.CharField(max_length=250, default='no image')
     isBlackOwned = models.BooleanField()
     isWomanOwned = models.BooleanField()
